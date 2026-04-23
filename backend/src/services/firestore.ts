@@ -1,5 +1,5 @@
 import { Firestore } from "@google-cloud/firestore";
-import seedDataJson from "../../../data/seed/india-election-process.json" with { type: "json" };
+import { seedData } from "./seed-data.js";
 
 export interface Citation {
   name: string;
@@ -26,34 +26,6 @@ export interface FaqItem {
   source?: Citation;
 }
 
-interface SeedSource {
-  id: string;
-  name: string;
-  url: string;
-}
-
-interface SeedData {
-  sources: SeedSource[];
-  timeline: Array<{
-    id: string;
-    title: string;
-    description: string;
-    sourceId?: string;
-  }>;
-  stateProcesses: Record<string, string[]>;
-  glossary: Array<{
-    term: string;
-    definition: string;
-    sourceId?: string;
-  }>;
-  faq: Array<{
-    id: string;
-    question: string;
-    answer: string;
-    sourceId?: string;
-  }>;
-}
-
 interface TimelineDoc {
   id?: string;
   title: string;
@@ -66,8 +38,6 @@ interface TimelineDoc {
 interface StateProcessDoc {
   steps?: string[];
 }
-
-const seedData = seedDataJson as SeedData;
 const sourceMap = new Map(seedData.sources.map((source) => [source.id, source]));
 
 const firestore = process.env.GOOGLE_CLOUD_PROJECT
