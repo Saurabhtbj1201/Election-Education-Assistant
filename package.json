@@ -1,0 +1,23 @@
+{
+  "name": "promptwars-election-education-assistant",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:backend": "npm --workspace backend run dev"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

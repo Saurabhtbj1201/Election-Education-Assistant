@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+.vscode/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml

@@ -1,0 +1,240 @@
+:root {
+  --bg-start: #f7f4ed;
+  --bg-end: #e9efe0;
+  --surface: #fffef9;
+  --ink: #1e1b16;
+  --ink-muted: #534f45;
+  --accent: #005f73;
+  --accent-strong: #0a9396;
+  --line: #d6d0c2;
+  --ok: #2d6a4f;
+  --warn: #9c5221;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  color: var(--ink);
+  background: radial-gradient(circle at top right, #fef9c3 0%, transparent 35%),
+    linear-gradient(160deg, var(--bg-start), var(--bg-end));
+  font-family: var(--font-ui), "Segoe UI", sans-serif;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #ef476f;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.4rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  font-family: var(--font-display), serif;
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+.brand span {
+  font-family: var(--font-ui), sans-serif;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.4rem 0.55rem;
+  border-radius: 0.35rem;
+}
+
+.nav-list a:hover {
+  background: color-mix(in srgb, var(--accent-strong) 14%, white);
+}
+
+.page-wrap {
+  width: min(1100px, 92%);
+  margin: 1.2rem auto 3rem;
+}
+
+.hero {
+  background: linear-gradient(120deg, #e0f2fe, #fff7ed);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1.2rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display), serif;
+  line-height: 1.1;
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+}
+
+.hero p {
+  max-width: 70ch;
+  color: var(--ink-muted);
+}
+
+.card-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+
+.info-card h2,
+.info-card h3 {
+  margin-top: 0;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #003b49;
+  background: color-mix(in srgb, var(--accent-strong) 20%, white);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+}
+
+.muted {
+  color: var(--ink-muted);
+}
+
+.list-panel {
+  margin-top: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+
+.list-panel ol,
+.list-panel ul {
+  margin-top: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.9rem;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #bcb4a0;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.65rem;
+  background: #fff;
+}
+
+button {
+  border: none;
+  border-radius: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #004f61;
+}
+
+.assistant-answer {
+  margin-top: 0.9rem;
+  background: #f9faf6;
+  border-left: 4px solid var(--ok);
+  border-radius: 0.3rem;
+  padding: 0.75rem;
+}
+
+.disclaimer {
+  border-left: 4px solid var(--warn);
+  padding-left: 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
