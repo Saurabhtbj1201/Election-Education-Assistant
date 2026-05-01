@@ -4,11 +4,12 @@ export default function ChatPage() {
   return (
     <main id="main-content" className="page-wrap">
       <section className="hero" aria-labelledby="chat-title">
-        <span className="tag">Guided Q and A</span>
+        <span className="tag">Guided Q and A powered by Google AI</span>
         <h1 id="chat-title">Ask election process questions safely</h1>
         <p>
           Ask in plain language. The assistant responds with educational guidance and falls back
-          when confidence is low.
+          when confidence is low. When available, answers are generated with Gemini and grounded
+          with trusted election sources.
         </p>
       </section>
 

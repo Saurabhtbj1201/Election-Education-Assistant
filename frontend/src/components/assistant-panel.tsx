@@ -32,6 +32,7 @@ export function AssistantPanel() {
 
   return (
     <section className="list-panel" aria-label="Assistant chat panel">
+      <p className="tag">Gemini-backed answers from Google services</p>
       <form onSubmit={onSubmit}>
         <label htmlFor="assistant-state">State</label>
         <input

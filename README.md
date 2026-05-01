@@ -9,7 +9,7 @@ Many voters struggle to find reliable, simple, and state-aware election process 
 - Frontend: Next.js (TypeScript)
 - Backend: Node.js + Express on Cloud Run
 - Data: Firestore
-- AI: Vertex AI (Gemini)
+- AI: Gemini-backed answers via Google AI SDK with Firestore grounding
 - Secrets: Secret Manager
 
 ## Core Features
@@ -65,5 +65,5 @@ Frontend (.env.local in frontend):
 | Efficiency | Cached static references, bounded API payloads, lightweight pages |
 | Testing | Unit + integration + e2e suites in CI |
 | Accessibility | Semantic HTML, keyboard support, contrast-safe styles, reduced motion |
-| Google Services | Cloud Run + Firestore + Vertex AI + Secret Manager integration |
+| Google Services | Cloud Run + Firestore + Gemini response generation + Secret Manager integration |
 | Problem Alignment | India-focused election education with state-specific guidance |
