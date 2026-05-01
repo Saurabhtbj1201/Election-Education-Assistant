@@ -12,12 +12,8 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@google-cloud/firestore": "^7.11.1",
-    "@google/generative-ai": "^0.24.1",
-=======
     "@google-cloud/firestore": "^8.5.0",
->>>>>>> dec601151800bc8592830fcb25294e5f741f8b37
+    "@google/generative-ai": "^0.24.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
