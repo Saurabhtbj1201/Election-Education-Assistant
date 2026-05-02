@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { fetchProcessSteps } from "../../lib/api-client";
+import { PollingStationMap } from "@/components/polling-station-map";
 
 const defaultState = "Maharashtra";
 
@@ -58,6 +59,14 @@ export default function ProcessPage() {
         ) : (
           <p className="muted">No steps loaded yet. Enter a state and click Load Steps.</p>
         )}
+
+        <div style={{ marginTop: "3rem" }}>
+          <h2>Find Nearby Polling Stations</h2>
+          <p style={{ color: "#666", marginBottom: "1rem" }}>
+            Easily locate your nearest polling booth via Google Maps integration.
+          </p>
+          <PollingStationMap />
+        </div>
       </section>
     </main>
   );

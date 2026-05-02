@@ -8,19 +8,25 @@
     "start": "next start",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.13.5",
+    "@vis.gl/react-google-maps": "^1.8.3",
     "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^9.17.0",
     "eslint-config-next": "^15.0.0",
+    "jsdom": "^28.1.0",
     "typescript": "^5.7.2",
     "vitest": "^4.1.5"
   }

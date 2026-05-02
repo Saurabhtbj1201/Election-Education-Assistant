@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Fraunces } from "next/font/google";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Providers } from "@/components/providers";
+import { LoginButton } from "@/components/login-button";
 import "./globals.css";
 
 const uiFont = Space_Grotesk({
@@ -36,24 +38,27 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
-        <header className="site-header" role="banner">
-          <div className="header-inner">
-            <Link href="/" className="brand" aria-label="PromptWars home">
-              PromptWars
-              <span>Election Education</span>
-            </Link>
-            <nav aria-label="Primary">
-              <ul className="nav-list">
-                {navItems.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href}>{item.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        </header>
-        {children}
+        <Providers>
+          <header className="site-header" role="banner">
+            <div className="header-inner">
+              <Link href="/" className="brand" aria-label="PromptWars home">
+                PromptWars
+                <span>Election Education</span>
+              </Link>
+              <nav aria-label="Primary">
+                <ul className="nav-list">
+                  {navItems.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href}>{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <LoginButton />
+            </div>
+          </header>
+          {children}
+        </Providers>
       </body>
     </html>
   );
