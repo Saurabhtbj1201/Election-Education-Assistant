@@ -1,10 +1,15 @@
 "use client";
 
 import { useGoogleLogin } from "@react-oauth/google";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function LoginButton() {
   const [user, setUser] = useState<{ email?: string; name?: string } | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
@@ -20,6 +25,10 @@ export function LoginButton() {
     },
     onError: () => console.log("Login Failed"),
   });
+
+  if (!mounted) {
+    return <div className="login-container" style={{ marginLeft: 'auto', display: 'flex', width: '150px' }} aria-label="Loading authentication"></div>;
+  }
 
   return (
     <div className="login-container" style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '1rem' }} aria-label="Authentication controls">
